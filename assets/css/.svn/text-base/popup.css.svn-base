@@ -1,0 +1,175 @@
+.left{
+	float:left;
+}
+.right{
+	float: right;
+}
+/*社会人员*/
+.small-people-pupop{
+	width: 336px;
+	height: 150px;
+}
+.popup-one{
+	height: 177px;
+}
+.people-top{
+	width: 336px;
+	height: 150px;
+	position: relative;
+}
+.people-top .people-img{
+	width: 111px;
+	height: 117px;
+	position: absolute;
+	/*left: 5px;*/
+	top:10px;
+}
+.people-img img{
+	width:100%;
+	height: 100%;
+}
+.people-top .people-detail{
+	width: 167px;
+	height: 137px;
+	position: absolute;
+	right: 30px;
+	top:10px;
+}
+.people-detail div{
+	width: 100%;
+	height: 32px;
+	line-height: 32px;
+}
+.people-detail div span{
+	color:  #74899f;
+}
+.people-detail div:nth-child(1) span{
+	color: #1689ff;
+	font-size: 18px;
+	letter-spacing: 1px;
+}
+.people-detail .right-small{
+	width: 100px;
+	height: 100%;
+	float: right;
+	text-align: center;
+	color: #000;
+}
+.people-bot{
+	height: 34px;
+	margin-left:5px;
+}
+.people-bot span{
+	float:left;
+	margin-right: 15px;
+	color:  #74899f;
+}
+.people-bot b{
+	float:left;
+	margin-right: 20px;
+	font-weight: normal;
+	color:  #000;
+}
+/*企业单位*/
+.compay-title{
+	width: 350px;
+	height: 22px;
+	font-size: 18px;
+	letter-spacing: 1px;
+	color: #1689ff;
+	font-family: MicrosoftYaHei;
+	margin-top:24px;
+}
+.compay-address{
+	width: 350px;
+	height: 22px;
+	color: #000;
+	font-size: 12px;
+	margin-top:12px;
+}
+.compay-detail{
+	width: 320px;
+	height:50px;
+	margin-top:30px;
+}
+.detail-left,.detail-right{
+	width: 160px;
+	height: 50px;
+	float: left;
+}
+.detail-left,.detail-right li{
+	line-height: 25px;
+}
+.detail-left li span{
+	color: #74899f;
+}
+.detail-left li b{
+	font-weight: normal;
+	padding-right: 25px;
+	color: #000;
+}
+.detail-right li span{
+	color: #74899f;
+}
+.detail-right li b{
+	font-weight: normal;
+	padding-right: 25px;
+	color: #000;
+}
+
+/*设施设备*/
+.detail_sssb_rfid_pop{
+	height: 26px;
+	padding: 0 5px;
+}
+.detail_sssb_rfid_pop .content-left{
+	float: left;
+	height: 24px;
+	line-height: 36px;
+	color: #323232;
+}
+.detail_sssb_rfid_pop .content-right{
+	float: right;
+	height: 24px;
+	line-height: 36px;
+	color: #ff8f17;
+}
+
+
+/*警务行为*/
+.detail_sqjw{
+	height: 40px;
+	padding: 0 10px;
+	border-bottom: 1px solid #E6E6E6;
+	font-size: 13px;
+}
+.detail_sqjw .content-left{
+	float: left;
+	height: 36px;
+	line-height: 36px;
+	color: #323232;
+}
+.detail_sqjw .content-right{
+	float: right;
+	height: 36px;
+	line-height: 36px;
+	color: #ff8f17;
+}
+
+.detial_jwxw_xfhl_pop{
+	height: 26px;
+	padding: 0 6px;
+}
+.detial_jwxw_xfhl_pop .content-left{
+	float: left;
+	height: 24px;
+	line-height: 24px;
+	color: #323232;
+}
+.detial_jwxw_xfhl_pop .content-right{
+	float: right;
+	height: 24px;
+	line-height: 24px;
+	color: #ff8f17;
+}
+

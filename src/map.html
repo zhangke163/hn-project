@@ -1,0 +1,1010 @@
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="../assets/plugins/leaflet/leaflet.css">
+		<link rel="stylesheet" href="../assets/plugins/leaflet/L.Control.MousePosition.css">
+		<link rel="stylesheet" href="../assets/plugins/leaflet/leaflet.draw.css" />
+		<link rel="stylesheet" href="../assets/plugins/leaflet/leaflet.groupedlayercontrol.css" />
+		<link rel="stylesheet" href="../assets/plugins/leaflet/L.Control.BetterScale.css" />
+		<link rel="stylesheet" href="../assets/plugins/leaflet/Control.ClearOrbit.css" />
+		<link rel="stylesheet" type="text/css" href="../assets/plugins/leaflet/MarkerCluster.css">
+		<link rel="stylesheet" type="text/css" href="../assets/plugins/leaflet/MarkerCluster.Default.css">
+		<link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.css">
+		<link rel="stylesheet" href="../assets/plugins/layui/css/layui.css">
+		<link rel="stylesheet" href="../assets/css/base.css">
+		<link rel="stylesheet" href="../assets/css/searchPanel.css">
+		<link rel="stylesheet" href="../assets/css/map-popup.css">
+		<link rel="stylesheet" href="../assets/css/left-list.css" />
+		<link rel="stylesheet" href="../assets/css/right-list.css" />
+		<link rel="stylesheet" href="../assets/css/popup.css" />
+
+	</head>
+
+	<body>
+		<!--地图左侧信息显示-->
+		<!--<div class="hander"></div>-->
+		<div class="box demo2 shows">
+			<!--收缩按钮-->
+			<div id="shrinkBtn" class='shows'></div>
+			<div class="layui-tab">
+				<div class="layui-tab-content areas-content">
+					<div class="layui-tab-item   layui-show">
+						<div class="element-query">
+							<div class="layui-tab" lay-filter="featureQuery">
+								<ul class="layui-tab-title colu-title">
+									<li class="layui-this">社<br/>会<br/>人<br/>员</li>
+									<li style="display: none;">出<br/>租<br/>房<br/>屋</li>
+									<li>企<br/>业<br/>单<br/>位</li>
+									<li>设<br/>施<br/>设<br/>备</li>
+									<li>警<br/>务<br/>行<br/>为</li>
+								</ul>
+								<div class="layui-tab-content colu-content">
+									<div class="layui-tab-item layui-show" style='padding:10px;padding-right: 0;'>
+										<div class="search-box">
+											<input type="text" name="title" required lay-verify="required" id='searchInput' placeholder="请输入社会人员信息" autocomplete="off" class="layui-input">
+											<button class="layui-btn" id="searchBtnPerson"></button>
+										</div>
+										<select name="city" lay-verify="" id="personSelect">
+											<option value="">请选择人员类别</option>
+											<option value="010">北京</option>
+											<option value="021">上海</option>
+											<option value="0571">杭州</option>
+										</select>
+										<button class='showBtn'>全部显示</button>
+										<div class="search-contents ">
+
+										</div>
+										<div id="demo3" style="text-align: center; margin: 0;"></div>
+									</div>
+									<!--出租房屋-->
+									<div class="layui-tab-item" style='padding:10px;padding-right: 0; display: none;'>
+										<div class="search-box" id='houseSearch'>
+											<input type="text" name="title" required lay-verify="required" placeholder="请输入出租房屋信息" autocomplete="off" class="layui-input">
+											<button class="layui-btn" id='searchBtnHouse'></button>
+										</div>
+										<select name="city" lay-verify="" id='houseSelect'>
+											<option value="">请选择小区/村</option>
+											<option value="010">黄湾镇黄山村黄山咀13号</option>
+											<option value="021">黄湾镇黄山村黄山咀14号</option>
+											<option value="0571">黄湾镇黄山村黄山咀15号</option>
+										</select>
+										<button class='showBtn'>全部显示</button>
+										<div class="search-contents consTwo">
+											<div class="detail-search-cons">
+												<div class="search-top">
+													<h3>黄湾镇黄山村黄山咀13号</h3>
+												</div>
+												<div class="search-middle-one">
+													<div class="search-mid-left">
+														<span style=''>房屋档案:</span>
+														<b style=''>3304812130131</b>
+													</div>
+													<div class="search-mid-right">
+														<span>黄生林</span>
+														<b>出租人:</b>
+													</div>
+												</div>
+												<div class="search-middle">
+													<div class="search-mid-left">
+														<span>所属部门:</span>
+														<b>嘉兴市局</b>
+													</div>
+													<div class="search-mid-right">
+														<span>系统管理员
+															<div class="pup-detail">
+																18435155931
+															</div>
+														</span>
+														<b>负责人:</b>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div id="demo4" style="text-align: center; margin: 0;"></div>
+									</div>
+									<!--企业单位-->
+									<div class="layui-tab-item" style='padding:10px;padding-right:0;'>
+										<div class="search-box" id='companySearch'>
+											<input type="text" name="title" required lay-verify="required" placeholder="请输入企业单位信息" autocomplete="off" class="layui-input">
+											<button class="layui-btn" id="searchBtnCompany"></button>
+										</div>
+										<select name="city" lay-verify="" id='companyDLSelect'>
+											<option value="">请选择企业大类</option>
+											<option value="010">海宁皮革厂</option>
+											<option value="021">浙江水利局</option>
+											<option value="0571">海宁皮革厂</option>
+										</select>
+										<select name="city" lay-verify="" id='companySelect'>
+											<option value="">请选择企业小类</option>
+											<option value="010">海宁皮革厂</option>
+											<option value="021">浙江水利局</option>
+											<option value="0571">海宁皮革厂</option>
+										</select>
+										<button class='showBtn'>全部显示</button>
+										<div class="search-contents">
+
+										</div>
+										<div id="demo5" style="text-align: center; margin: 0;"></div>
+									</div>
+									<!--设施设备-->
+									<div class="layui-tab-item" style='padding:10px;padding-right:0;'>
+										<div class="search-box" id='baseSearchSSSB'>
+											<input type="text" name="title" required lay-verify="required" placeholder="请输入设施设备信息" autocomplete="off" class="layui-input">
+											<button class="layui-btn" id='searchBtnSSSB'></button>
+										</div>
+										<select name="city" lay-verify="" id='sssbSelect'>
+											<option value="GPS">GPS</option>
+											<option value="监控设备">监控设备</option>
+											<option value="RFID">RFID</option>
+											<option value="MAC">MAC</option>
+											<option value="4G执法记录仪">4G执法记录仪</option>
+											<option value="警用车辆">警用车辆</option>
+											<option value="警情">警情</option>
+											<option value="社会视频点">社会视频点</option>
+										</select>
+										<button class='showBtn' disabled="disabled">全部显示</button>
+										<div class="search-contents">
+										</div>
+										<div id="demo6" style="text-align: center; margin: 0;"></div>
+									</div>
+									<!--警务行为-->
+									<div class="layui-tab-item" style='padding:10px;padding-right:0;'>
+										<div class="search-box" id='baseSearchCJXW'>
+											<input type="text" name="title" required lay-verify="required" placeholder="请输入行为类型" autocomplete="off" class="layui-input">
+											<button class="layui-btn" id='searchBtnJWXW'></button>
+										</div>
+										<select name="model" lay-verify="" id='jwxwSelect'>
+											<option value="入户走访">入户走访</option>
+											<option value="警民恳谈">警民恳谈</option>
+											<option value="巡逻防范">巡逻防范</option>
+											<option value="防范宣传">防范宣传</option>
+											<option value="巡防核录">巡防核录</option>
+											<option value="警务通GPS">警务通GPS</option>
+										</select>
+										<button class='showBtn'>全部显示</button>
+										<div class="search-contents">
+
+											<!--巡防核录-->
+											<div class="detail-search-cons consFour alarmCons">
+												<div class="search-top">
+													<h3>王健</h3>
+													<b>141024199001470017</b>
+												</div>
+												<div class="search-middles">
+													<div class="search-mids-left">
+														<span>地址:</span>
+														<b title='浙江省和䑿沙姜粉哈发货时间哈金凤'>浙江省和䑿沙姜粉哈发货时间哈金大姐手机单大大</b>
+													</div>
+												</div>
+												<div class="search-bottom">
+													<div class="search-bot-left">
+														<span>核查民警:</span>
+														<b>张子那</b>
+													</div>
+												</div>
+												<div class="search-bottom">
+													<div class="search-bot-left">
+														<span>结束时间:</span>
+														<b title="2018-07-23 12:25:00">2018-07-23 12:25:00</b>
+													</div>
+												</div>
+												<div class="search-bottom">
+													<div class="search-bot-right">
+														<span title="2018-07-23 12:25:00">2018-07-23 12:25:00</span>
+														<b>开始时间:</b>
+													</div>
+												</div>
+											</div>
+											<!--走访情况-->
+											<div class="detail-search-cons consFour interviewCons">
+												<div class="search-top">
+													<h3>宋子哲</h3>
+													<span>男</span>
+													<b>130129199999999999</b>
+												</div>
+												<div class="search-middles">
+													<div class="search-mids-left">
+														<span>现居住地址:</span>
+														<b title='浙江省和䑿沙姜粉哈发货时间哈金凤'>浙江省和䑿沙姜粉哈发货时间哈金大姐手机单大大</b>
+													</div>
+												</div>
+												<div class="search-bottom">
+													<div class="search-bot-left">
+														<span>走访人:</span>
+														<b>陈扬帆</b>
+													</div>
+													<div class="search-bot-right">
+														<span title="2018-07-23 12:25:00">2018-07-23 12:25:00</span>
+														<b>走访日期:</b>
+													</div>
+												</div>
+											</div>
+											<!--警民悬谈-->
+											<div class="detail-search-cons consFour talkCons">
+												<div class="search-top">
+													<h3>王俊凯</h3>
+													<b>141024199001470017</b>
+												</div>
+												<div class="search-middles">
+													<div class="search-mids-left">
+														<span>恳谈地址:</span>
+														<b title='浙江省和䑿沙姜粉哈发货时间哈金凤'>浙江省和䑿沙姜粉哈发货时间哈金大姐手机单大大</b>
+													</div>
+												</div>
+												<div class="search-bottom">
+													<div class="search-bot-left">
+														<span>参加群众:</span>
+														<b>张子那</b>
+													</div>
+													<div class="search-bot-right">
+														<span>金华管理区</span>
+														<b>所属辖区:</b>
+													</div>
+												</div>
+											</div>
+											<!--巡逻防范-->
+											<div class="detail-search-cons consFour conditionCons">
+												<div class="search-top">
+													<h3>朱佳、王佳龙</h3>
+													<b>社区党员巡逻队</b>
+												</div>
+												<div class="search-middles">
+													<div class="search-mids-left">
+														<span>巡逻开展情况:</span>
+														<b title='2012年12月30日晚上，对新华社区整个辖区进行巡逻。'>2012年12月30日晚上，对新华社区整个辖区进行巡逻。</b>
+													</div>
+												</div>
+												<div class="search-bottom">
+													<div class="search-bot-left">
+														<span>巡逻人员情况:</span>
+														<b>社区党员</b>
+													</div>
+													<div class="search-bots-right">
+														<span>上海</span>
+														<b>巡逻区域:</b>
+													</div>
+												</div>
+											</div>
+											<!--防范宣传-->
+											<div class="detail-search-cons consFour">
+												<div class="search-top">
+													<h3>王金良</h3>
+													<b>沿街店面、出租房</b>
+												</div>
+												<div class="search-middles">
+													<div class="search-mids-left">
+														<span>宣传监狱形式:</span>
+														<b>上门宣传</b>
+													</div>
+												</div>
+												<div class="search-bottom">
+													<div class="search-bot-left">
+														<span>宣传教育内容:</span>
+														<b>消防安全</b>
+													</div>
+												</div>
+											</div>
+											<!--警务通GPS-->
+											<div class="detail-search-cons consFour">
+												<div class="search-top">
+													<h3>系统管理员</h3>
+													<b>141024199001470017</b>
+												</div>
+												<div class="search-middles">
+													<div class="search-mids-left">
+														<span>品牌:</span>
+														<b>警务通111</b>
+													</div>
+													<div class="search-mids-right">
+														<span>H1233221</span>
+														<b>型号:</b>
+													</div>
+												</div>
+												<div class="search-bottom">
+													<div class="search-bot-left">
+														<span>所属辖区:</span>
+														<b>金华管理区</b>
+													</div>
+													<div class="search-bot-right">
+														<span title="2018-07-23 12:25:00">2018-07-23 12:25:00</span>
+														<b>定位时间:</b>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div id="demo7" style="text-align: center; margin: 0;"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="layui-tab-item">案件任务</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="detail_zdry" style="display: none;">
+			<div class="detail_content">
+				<div class="detail_left">
+					<div class="detail_pic "><img src="../assets/images/uploadnull.png "></img>
+					</div>
+					<div class="detail_name "></div>
+				</div>
+				<div class="detail_left ">
+					<div class="detal_info">
+						<div><span>姓名：</span><span id="zdry_name">0</span></div>
+						<div><span>身份证号：</span><span id="zdry_id">1</span></div>
+						<div><span>人员类别：</span><span id="zdry_type">2</span></div>
+						<div><span>所属辖区：</span><span id="zdry_ownUnit">3</span></div>
+						<div><span>管辖民警：</span><span id="zdry_ownUser">4</span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="detail_qydw" style="display: none;">
+			<div class="detail_content">
+				<div class="detal_info">
+					<div><span>单位名称：</span><span id="qydw_name">姓名</span></div>
+					<div><span>单位法人：</span><span id="qydw_right">姓名</span></div>
+					<div><span>所在地址：</span><span id="qydw_address">身份证号</span></div>
+					<div><span>单位类别：</span><span id="qydw_type">身份证号</span></div>
+					<div><span>所属辖区：</span><span id="qydw_ownUnit">身份证号</span></div>
+					<div><span>管辖民警：</span><span id="qydw_ownUser">身份证号</span></div>
+				</div>
+			</div>
+		</div>
+
+		<div style="display: none;">
+			<div id="detail_sqjw_zdry">
+				<div><span>姓名：</span><span id='detail_zdry_name'></span></div>
+				<div><span>性别：</span><span id='detail_zdry_xb'></span></div>
+				<div><span>身份证号：</span><span id='detail_zdry_sfzh'></span></div>
+				<div><span>重点人员类别：</span><span id='detail_zdry_zdrylb'></span></div>
+				<div><span>现居地地址：</span><span id='detail_zdry_xjzdz'></span></div>
+				<div><span>户籍地址：</span><span id='detail_zdry_hjdz'></span></div>
+				<div><span>管辖民警：</span><span id='detail_zdry_ownname'></span></div>
+				<div><span>所属辖区：</span><span id='detail_zdry_ownunit'></span></div>
+			</div>
+
+			<div id='detail_sqjw_zfqk'>
+				<div class="detail_sqjw">
+					<div class="content-left"><span>姓名：</span></div>
+					<div class="content-right"><span id='detail_zfqk_name'></span></div>
+				</div>
+				<div class="detail_sqjw">
+					<div class="content-left"><span>身份证号：</span></div>
+					<div class="content-right"><span id='detail_zfqk_sfzh'></span></div>
+				</div>
+				<div class="detail_sqjw">
+					<div class="content-left"><span>户籍地址：</span></div>
+					<div class="content-right"><span id='detail_zfqk_hjdz'></span></div>
+				</div>
+				<div class="detail_sqjw">
+					<div class="content-left"><span>现居地地址：</span></div>
+					<div class="content-right"><span id='detail_zfqk_xjzdz'></span></div>
+				</div>
+				<div class="detail_sqjw">
+					<div class="content-left"><span>走访人：</span></div>
+					<div class="content-right"><span id='detail_zfqk_zfr'></span></div>
+				</div>
+				<div class="detail_sqjw">
+					<div class="content-left"><span>走访时间：</span></div>
+					<div class="content-right"><span id='detail_zfqk_zfsj'></span></div>
+				</div>
+			</div>
+			<div id='detail_sqjw_jmkt'>
+				<div class="detail_sqjw">
+					<div class="content-left"><span>姓名：</span></div>
+					<div class="content-right"><span id='detail_jmkt_name'></span></div>
+				</div>
+				<div class="detail_sqjw">
+					<div class="content-left"><span>恳谈日期：</span></div>
+					<div class="content-right"><span id='detail_jmkt_ktrq'></span></div>
+				</div>
+				<div class="detail_sqjw">
+					<div class="content-left"><span>恳谈地点：</span></div>
+					<div class="content-right"><span id='detail_jmkt_ktdd'></span></div>
+				</div>
+				<div class="detail_sqjw">
+					<div class="content-left"><span>所在辖区：</span></div>
+					<div class="content-right"><span id='detail_jmkt_ownunit'></span></div>
+				</div>
+				<div class="detail_sqjw">
+					<div class="content-left"><span>参加民警：</span></div>
+					<div class="content-right"><span id='detail_jmkt_cjmj'></span></div>
+				</div>
+				<div class="detail_sqjw">
+					<div class="content-left"><span>参加群众：</span></div>
+					<div class="content-right"><span id='detail_jmkt_cjqz'></span></div>
+				</div>
+			</div>
+			<div id='detail_sqjw_xlff'>
+				<div class="detail_sqjw">
+					<div class="content-left"><span>巡逻民警：</span></div>
+					<div class="content-right"><span id='detail_xlff_xlmj'></span></div>
+				</div>
+				<div class="detail_sqjw">
+					<div class="content-left"><span>巡逻单位：</span></div>
+					<div class="content-right"><span id='detail_xlff_xldw'></span></div>
+				</div>
+				<div class="detail_sqjw">
+					<div class="content-left"><span>巡逻人员：</span></div>
+					<div class="content-right"><span id='detail_xlff_xlry'></span></div>
+				</div>
+				<div class="detail_sqjw">
+					<div class="content-left"><span>巡逻区域：</span></div>
+					<div class="content-right"><span id='detail_xlff_xlqy'></span></div>
+				</div>
+				<div class="detail_sqjw">
+					<div class="content-left"><span>开展情况：</span></div>
+					<div class="content-right"><span id='detail_xlff_xlkzqk'></span></div>
+				</div>
+			</div>
+			<div id='detail_sqjw_ffxc'>
+				<div class="detail_sqjw">
+					<div class="content-left"><span>宣传人员：</span></div>
+					<div class="content-right"><span id='detail_ffxc_xcry'></span></div>
+				</div>
+				<div class="detail_sqjw">
+					<div class="content-left"><span>宣传区域：</span></div>
+					<div class="content-right"><span id='detail_ffxc_xcqy'></span></div>
+				</div>
+				<div class="detail_sqjw">
+					<div class="content-left"><span>宣传形式：</span></div>
+					<div class="content-right"><span id='detail_ffxc_xcxs'></span></div>
+				</div>
+				<div class="detail_sqjw">
+					<div class="content-left"><span>宣传内容：</span></div>
+					<div class="content-right"><span id='detail_ffxc_xcnr'></span></div>
+				</div>
+				<div class="detail_sqjw">
+					<div class="content-left"><span>备注：</span></div>
+					<div class="content-right"><span id='detail_ffxc_bz'></span></div>
+				</div>
+			</div>
+		</div>
+		<!--视频窗口-->
+		<iframe width=0 height=0 id="videoUrl"></iframe>
+		<!--展开按钮-->
+		<div id="unfoldBtn" class='nons'></div>
+		<div id='popup' style="display: none;">
+			<div class="layui-card content">
+				<div class="layui-card-header font-16 height-38">片区信息
+					<!--<img id="closePopup" style="float: right;margin-top: 10px;" src="../assets/images/close2.png"/>-->
+				</div>
+				<div class="layui-card-body">
+					<div class="left">
+						<div class="layui-card">
+							<div class="layui-card-header small-header font-12">负责人名片</div>
+							<div class="layui-card-body small-body" style="padding: 0;">
+								<div>
+									<div class="head-img">
+										<img src="../assets/images/负责人.png" height="170" width="100%" />
+									</div>
+									<div class="height-38 area-info">
+										<span class="font-16">李毅天</span>
+										<span class="area-head-info font-10">片区负责人</span>
+									</div>
+
+								</div>
+								<div class="head-detail-info font-12">
+									<div>
+										<span class="color-gray">警号：</span><span>33021334</span>
+									</div>
+									<div>
+										<span class="color-gray">联系方式：</span><span>15245786598</span>
+									</div>
+									<div>
+										<span class="color-gray">管辖派出所：</span><span>海州派出所</span>
+									</div>
+									<div>
+										<span class="color-gray">管线区域：</span><span>东长社区</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="right">
+						<div class="box1 demobox">
+							<div class="tab-ul-box">
+								<ul id="right_tab" class="tab_menu mouseoverList leftSider">
+									<li class="current">警员在线</li>
+									<li>居住人口</li>
+									<!-- <li>出租房屋</li> -->
+									<li>企业单位</li>
+									<div class="layui-clear"></div>
+								</ul>
+							</div>
+							<div>
+								<div class="tab_box">
+									<div class='leftContent'>
+										<div style="width: 61px; height: 100%; float:left; border: 1px solid #e1e7ed;">
+											<ul class="nav nav-tabs nav-stacked font-12" id="new_nav_tab">
+												<li role="presentation" class="active">
+													<a href="#">警司</a>
+												</li>
+												<li role="presentation">
+													<a href="#">警员</a>
+												</li>
+												<li role="presentation">
+													<a href="#">助理警员</a>
+												</li>
+											</ul>
+										</div>
+										<div style="float:left; height: 100%; width: 143px; border: 1px solid #e1e7ed; border-left: none; padding: 5px 5px;" id="policemanList">
+											<ul class="policemanList font-12">
+												<li><span>烈如歌</span></li>
+												<li><span>银雪</span></li>
+												<li><span>暗夜罗</span></li>
+												<li><span>暗夜冥</span></li>
+												<li><span>列民警</span></li>
+												<li><span>战枫</span></li>
+												<li><span>钟离无泪</span></li>
+												<li><span>裔浪</span></li>
+												<li><span>香香</span></li>
+												<li class="active"><span>阿飞</span></li>
+											</ul>
+											<ul class="policemanList font-12" style="display: none;">
+												<li><span>烈如歌</span></li>
+												<li><span>列民警</span></li>
+												<li><span>战枫</span></li>
+												<li class="active"><span>钟离无泪</span></li>
+												<li><span>裔浪</span></li>
+												<li><span>香香</span></li>
+												<li><span>阿飞</span></li>
+											</ul>
+											<ul class="policemanList font-12" style="display: none;">
+												<li><span>烈如歌</span></li>
+												<li><span>银雪</span></li>
+												<li><span>暗夜罗</span></li>
+												<li><span>暗夜冥</span></li>
+												<li class="active"><span>列民警</span></li>
+												<li><span>香香</span></li>
+												<li><span>阿飞</span></li>
+											</ul>
+										</div>
+									</div>
+									<div class="rightContent">
+										<div class="top">
+											<div class="pic">
+												<img src="../assets/images/警员.png" width="80" height="90" />
+											</div>
+											<div class="info">
+												<div>
+													<div class="police-name font-16">张一楠</div>
+													<div class="police-tel font-10">15245785632</div>
+													<div class="layui-clear"></div>
+												</div>
+												<div>
+													<span>警员编号：</span>
+													<span class="value">123456789</span>
+												</div>
+												<div>
+													<span>管辖区域：</span>
+													<span class="value">东厂社区</span>
+												</div>
+											</div>
+										</div>
+										<div class="bottom">
+											<video src="../assets/res/movie.ogg" controls="controls" style="width: 100%; height: 100%;">
+											</video>
+										</div>
+									</div>
+									<div class="layui-clear"></div>
+								</div>
+								<div class="tab_box" style="display: none;">
+									<div class="tab-content-left">
+										<div>
+											<div class="people-info-value color-blue">458256</div>
+											<div class="people-info-attr color-gray font-12">常住人口</div>
+										</div>
+										<div>
+											<div class="people-info-value color-red">158</div>
+											<div class="people-info-attr color-gray font-12">肇事精神病人</div>
+										</div>
+										<div>
+											<div class="people-info-value color-orange">128</div>
+											<div class="people-info-attr color-gray font-12">前科人员</div>
+										</div>
+										<div>
+											<div class="people-info-value color-yellow">563</div>
+											<div class="people-info-attr color-gray font-12">境外人员</div>
+										</div>
+									</div>
+									<div class="tab-content-right">
+										<div class="perple_info" style="width: 100%; height: 100%;"></div>
+									</div>
+								</div>
+								<!-- <div class="tab_box" style="display: none;">
+									<div class="layui-form-item">
+										<label class="layui-form-label">筛选</label>
+										<div class="layui-input-block">
+											<select name="interest" lay-filter="area">
+												<option value="" selected="">请选择小区/村</option>
+												<option value="0">1</option>
+												<option value="1">2</option>
+												<option value="2">3</option>
+												<option value="3">4</option>
+												<option value="4">5</option>
+											</select>
+										</div>
+									</div>
+									<div class="tab-table">
+										<table class="layui-hide table-area" id="test1"></table>
+									</div>
+								</div> -->
+								<div class="tab_box" style="display: none;">
+									<div class="layui-form-item">
+										<label class="layui-form-label">筛选</label>
+										<div class="layui-input-block">
+											<select name="interest" lay-filter="area">
+												<option value="" selected="">请选择企业类型</option>
+												<option value="0">1</option>
+												<option value="1">2</option>
+												<option value="2">3</option>
+												<option value="3">4</option>
+												<option value="4">5</option>
+											</select>
+										</div>
+									</div>
+									<div class="tab-table">
+										<table class="layui-hide table-type" id="test2"></table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="map_container">
+			<div class="numbox" style="z-index: 999">
+				<div class="numtitle-box">
+					<div class="titcons">125</div>
+					<h2>在线警力</h2>
+				</div>
+				<div class="numconts-box">
+					<p>警务通</p>
+					<div class='imgcons'><img src="../assets/images/one-icon.svg" alt="" />
+						<h1 id='one-cons'>35</h1></div>
+				</div>
+				<div class="numconts-box">
+					<p>PDT对讲机</p>
+					<div class='imgcons'><img src="../assets/images/two-icon.svg" alt="" />
+						<h1 id='two-cons'>45</h1></div>
+				</div>
+				<div class="numconts-box">
+					<p>4G执法记录仪</p>
+					<div class='imgcons'><img src="../assets/images/three-icon.svg" alt="" />
+						<h1 id='three-cons'>27</h1></div>
+				</div>
+				<div class="numconts-box">
+					<p>北斗定位警用车辆</p>
+					<div class='imgcons'><img src="../assets/images/four-icon.svg" alt="" />
+						<h1 id='four-cons'>18</h1></div>
+				</div>
+			</div>
+		</div>
+		<div id="people_pop" style="display: none;">
+			<div class="pop-body">
+				<div class="layui-card-header font-12 new-title">人员信息</div>
+				<div class="layui-card-body">
+					<div class="card-top">
+						<div class="top-left">
+							<img src='../assets/images/uploadnull.png'>
+						</div>
+						<div class="top-right">
+							<div class="info-list font-12">
+								<div class="info-name info-left">人员类别：</div>
+								<div id="people_type" class="info-value info-right"></div>
+							</div>
+							<div class="info-list font-12">
+								<div class="info-name info-left">所属辖区：</div>
+								<div id="area" class="info-value info-right"></div>
+							</div>
+							<div class="info-list font-12">
+								<div class="info-name info-left">管辖民警：</div>
+								<div id="police" class="info-value info-right"></div>
+							</div>
+						</div>
+					</div>
+					<div class="card-bottom">
+						<div class="bottom-left font-12">
+							<span class="info-name">姓名：</span>
+							<span id="person_name" class="info-value"></span>
+						</div>
+						<div class="bottom-right font-12">
+							<span class="info-name">身份证号：</span>
+							<span id="id_card" class="info-value"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="enterprise_pop" style="display: none;">
+			<div class="pop-body">
+				<div class="layui-card-header font-12 new-title">企业单位信息</div>
+				<div class="layui-card-body">
+					<div id="enterprise_name" class="enterprise-name font-16"></div>
+					<div id="enterprise_location" class="enterprise-location info-name font-12"></div>
+					<div class="card-bottom enterprise-bottom">
+						<div class="bottom-left font-12">
+							<div class="info-name">单位法人：</div>
+							<div id="boss" class="info-value"></div>
+						</div>
+						<div class="bottom-right font-12">
+							<div class="info-name">所属辖区：</div>
+							<div id="enterprise_area" class="info-value"></div>
+						</div>
+						<div class="bottom-left font-12">
+							<div class="info-name">单位类别：</div>
+							<div id="enterprise_type" class="info-value"></div>
+						</div>
+						<div class="bottom-right font-12">
+							<div class="info-name">管辖民警：</div>
+							<div id="enterprise_police" class="info-value"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="gps_pop" style="display: none;">
+			<div class="pop-body">
+				<div class="layui-card-header font-12 new-title">GPS信息</div>
+				<div class="layui-card-body">
+					<div id="gps_name" class="enterprise-name font-16"></div>
+					<div id="enterprise_location" class="enterprise-location info-name font-12"></div>
+					<div class="card-bottom enterprise-bottom">
+						<div class="bottom-left font-12">
+							<div class="info-name">使用人：</div>
+							<div id="gps_user" class="info-value"></div>
+						</div>
+						<div class="bottom-right font-12">
+							<div class="info-name">更新时间：</div>
+							<div id="updateTime" class="info-value"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="jwxw_xfhl_pop" style="display: none;">
+			<div class="pop-body" style="height: 200px">
+				<div class="layui-card-header font-12 new-title">巡防核录</div>
+				<div class="layui-card-body">
+					<div class="detial_jwxw_xfhl_pop">
+						<div class="font-12 content-left"><span>核查人姓名</span></div>
+						<div class="font-12 content-right"><span id="jwxw_xfhl_pop_name"></span></div>
+					</div>
+					<div class="detial_jwxw_xfhl_pop">
+						<div class="font-12 content-left"><span>身份证号</span></div>
+						<div class="font-12 content-right"><span id="jwxw_xfhl_pop_sfzh"></span></div>
+					</div>
+					<div class="detial_jwxw_xfhl_pop">
+						<div class="font-12 content-left"><span>核查人籍贯</span></div>
+						<div class="font-12 content-right"><span id="jwxw_xfhl_pop_hjd"></span></div>
+					</div>
+					<div class="detial_jwxw_xfhl_pop">
+						<div class="font-12 content-left"><span>核查人地址</span></div>
+						<div class="font-12 content-right"><span id="jwxw_xfhl_pop_xjd"></span></div>
+					</div>
+					<div class="detial_jwxw_xfhl_pop">
+						<div class="font-12 content-left"><span>民警编号</span></div>
+						<div class="font-12 content-right"><span id="jwxw_xfhl_pop_hcmj"></span></div>
+					</div>
+					<div class="detial_jwxw_xfhl_pop">
+						<div class="font-12 content-left"><span>核查结束时间</span></div>
+						<div class="font-12 content-right"><span id="jwxw_xfhl_pop_hcjssj"></span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="jwxw_jwtgps_pop" style="display: none;">
+			<div class="pop-body">
+				<div class="layui-card-header font-12 new-title">警务通GPS</div>
+				<div class="layui-card-body">
+					<div id="jwxw_jwtgps_pop_name" class="enterprise-name font-16"></div>
+					<div id="jwxw_jwtgps_pop_lxdh" class="enterprise-location info-name font-12"></div>
+					<div class="card-bottom enterprise-bottom">
+						<div class="bottom-left font-12">
+							<div class="info-name">经度：</div>
+							<div id="jwxw_jwtgps_pop_jd" class="info-value"></div>
+						</div>
+						<div class="bottom-right font-12">
+							<div class="info-name">所属辖区：</div>
+							<div id="jwxw_jwtgps_pop_area" class="info-value"></div>
+						</div>
+						<div class="bottom-left font-12">
+							<div class="info-name">纬度：</div>
+							<div id="jwxw_jwtgps_pop_wd" class="info-value"></div>
+						</div>
+						<div class="bottom-right font-12">
+							<div class="info-name">定位时间：</div>
+							<div id="jwxw_jwtgps_pop_time" class="info-value"></div>
+						</div>
+					</div>
+					<div style="margin-left: 10px;" id="jwxw_jwtgps_pop_trail">						
+						<a >显示轨迹</a>						
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="spjk_pop " style="display: none; ">
+			<div class="pop-body ">
+				<div class="layui-card-header font-12 new-title ">视频监控信息</div>
+				<div class="layui-card-body ">
+					<div id="spjk_name " class="enterprise-name font-16 "></div>
+					<div id="spjk_show " class="enterprise-location info-name font-12 ">
+					</div>
+					<div class="card-bottom enterprise-bottom ">
+						<div class="bottom-left font-12 ">
+							<div class="info-name ">类型：</div>
+							<div id="spjk_type " class="info-value "></div>
+						</div>
+						<div class="bottom-right font-12 ">
+							<div class="info-name ">ip：</div>
+							<div id="ip " class="info-value "></div>
+						</div>
+						<div class="bottom-left font-12 ">
+							<div class="info-name ">所在辖区：</div>
+							<div id="spjk_szxq " class="info-value "></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="sssb_rfid_pop " style="display: none; ">
+			<div class="pop-body " style="height: 103px ">
+				<div class="layui-card-header font-12 new-title ">RFID信息</div>
+				<div class="layui-card-body ">
+					<div class="detail_sssb_rfid_pop ">
+						<div class="content-left "><span>地址:</span></div>
+						<div class="content-right "><span id="sssb_rfid_pop_address "></span></div>
+					</div>
+					<div class="detail_sssb_rfid_pop ">
+						<div class="content-left "><span>最近通信时间:</span></div>
+						<div class="content-right "><span id="sssb_rfid_pop_communicateTime "></span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="sssb_mac_pop " style="display: none; ">
+			<div class="pop-body " style="height: 103px ">
+				<div class="layui-card-header font-12 new-title ">MAC信息</div>
+				<div class="layui-card-body ">
+					<div class="detail_sssb_rfid_pop ">
+						<div class="content-left "><span>名称:</span></div>
+						<div class="content-right "><span id="sssb_mac_pop_name "></span></div>
+					</div>
+					<div class="detail_sssb_rfid_pop ">
+						<div class="content-left "><span>所属辖区:</span></div>
+						<div class="content-right "><span id="sssb_mac_pop_districBelong "></span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="sssb_policecar_pop " style="display: none; ">
+			<div class="pop-body ">
+				<div class="layui-card-header font-12 new-title ">警用车辆信息</div>
+				<div class="layui-card-body " style="padding: 0 15px ">
+					<div class="detail_sssb_rfid_pop ">
+						<div class="content-left "><span>车牌号:</span></div>
+						<div class="content-right "><span id="sssb_policecar_pop_carNumber "></span></div>
+					</div>
+					<div class="detail_sssb_rfid_pop ">
+						<div class="content-left "><span>公里数:</span></div>
+						<div class="content-right "><span id="sssb_policecar_pop_carkilometer "></span></div>
+					</div>
+					<div class="detail_sssb_rfid_pop ">
+						<div class="content-left "><span>当前位置:</span></div>
+						<div class="content-right "><span id="sssb_policecar_pop_currentPosition "></span></div>
+					</div>
+					<div class="detail_sssb_rfid_pop ">
+						<div class="content-left "><span>速度:</span></div>
+						<div class="content-right "><span id="sssb_policecar_pop_speed "></span></div>
+					</div>
+					<div class="detail_sssb_rfid_pop ">
+						<div class="content-left "><span>通讯时间:</span></div>
+						<div class="content-right "><span id="sssb_policecar_pop_communicatetime "></span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="sssb_policesituation_pop " style="display: none; ">
+			<div class="pop-body " style="height: 192px ">
+				<div class="layui-card-header font-12 new-title ">警情信息</div>
+				<div class="layui-card-body " style="padding: 0 15px;height: 192px ">
+					<div class="detail_sssb_rfid_pop ">
+						<div class="content-left "><span>地址:</span></div>
+						<div class="content-right "><span id="sssb_policesituation_pop_address "></span></div>
+					</div>
+					<div class="detail_sssb_rfid_pop ">
+						<div class="content-left "><span>类型:</span></div>
+						<div class="content-right "><span id="sssb_policesituation_pop_class "></span></div>
+					</div>
+					<div class="detail_sssb_rfid_pop ">
+						<div class="content-left "><span>报警内容:</span></div>
+						<div class="content-right "><span id="sssb_policesituation_pop_content "></span></div>
+					</div>
+					<div class="detail_sssb_rfid_pop ">
+						<div class="content-left "><span>报警人:</span></div>
+						<div class="content-right "><span id="sssb_policesituation_pop_people "></span></div>
+					</div>
+					<div class="detail_sssb_rfid_pop ">
+						<div class="content-left "><span>报警电话:</span></div>
+						<div class="content-right "><span id="sssb_policesituation_pop_tel "></span></div>
+					</div>
+					<div class="detail_sssb_rfid_pop ">
+						<div class="content-left "><span>报警位置:</span></div>
+						<div class="content-right "><span id="sssb_policesituation_pop_position "></span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="shsp_pop " style="display: none; ">
+			<div class="pop-body ">
+				<div class="layui-card-header font-12 new-title ">社会视频信息</div>
+				<div class="layui-card-body ">
+					<div id="shsp_name " class="enterprise-name font-16 "></div>
+					<div id="shsp_dz " class="enterprise-location info-name font-12 ">
+					</div>
+					<div class="card-bottom enterprise-bottom ">
+						<div class="bottom-left font-12 ">
+							<div class="info-name ">类型：</div>
+							<div id="shsp_type " class="info-value "></div>
+						</div>
+						<div class="bottom-left font-12 ">
+							<div class="info-name ">所在辖区：</div>
+							<div id="shsp_szxq " class="info-value "></div>
+						</div>
+						<div class="bottom-left font-12 ">
+							<div class="info-name ">联系人：</div>
+							<div id="shsp_lxr " class="info-value "></div>
+						</div>
+						<div class="bottom-left font-12 ">
+							<div class="info-name ">联系电话：</div>
+							<div id="shsp_lxdh " class="info-value "></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+				
+		<script src="../assets/plugins/jquery/jquery.min.js "></script>
+		<script src="../assets/plugins/jquery/jquery.form.js "></script>
+		<script src="../assets/plugins/layui/layui.all.js " charset="utf-8 "></script>
+		<script src="../assets/plugins/leaflet/leaflet.js "></script>
+		<script src="../assets/plugins/leaflet/leaflet.draw.js "></script>
+		<script src="../assets/plugins/leaflet/L.Control.MousePosition.js "></script>
+		<script src="../assets/plugins/leaflet/leaflet.groupedlayercontrol.js "></script>
+		<script src="../assets/plugins/leaflet/L.Control.BetterScale.js "></script>
+		<script src="../assets/plugins/leaflet/leaflet.markercluster.js " type="text/javascript "></script>
+		<!--<script src="../assets/plugins/leaflet/LoadArcgisTile.js "></script>-->
+		<script src="../assets/plugins/leaflet/leaflet.ChineseTmsProviders.js "></script>
+		<script src="../assets/plugins/leaflet/L.Polyline.SnakeAnim.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../assets/plugins/video/BigInt.js " type="text/javascript "></script>
+		<script src="../assets/plugins/video/RSA_Stripped.js " type="text/javascript "></script>
+		<script src="../assets/plugins/video/Barrett.js " type="text/javascript "></script>
+		<script src="../assets/script/util.js "></script>
+		<script src="../assets/script/paichusuo.js "></script>
+		<script src="../assets/plugins/echarts/echarts.min.js "></script>
+		<script src="../assets/script/customUtil.js "></script>
+		<script src="../assets/script/global-variable.js " type="text/javascript "></script>		
+		<script src="../assets/script/map.js "></script>
+		<script src="../assets/script/leftlist.js ">
+		</script>
+		<script type="text/html " id="sqjw_dwdz ">
+			{{# return d.sqjw_dwdz.name }}
+		</script>
+
+		<script type="text/html " id="owninguser ">
+			{{# return d.owninguser.name }}
+		</script>
+
+		<script type="text/html " id="owningbusinessunit ">
+			{{# return d.owningbusinessunit.name }}
+		</script>
+	</body>
+
+</html>

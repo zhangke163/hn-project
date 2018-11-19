@@ -1,0 +1,793 @@
+	.layui-nav .layui-nav-mored,
+	.layui-nav-itemed>a .layui-nav-more {
+		border-color: transparent transparent #000;
+		top: 22px;
+	}
+	
+	.layui-tab-bar {
+		display: none;
+	}
+	
+	.areas-title {
+		height: 30px;
+		width: 371px;
+		overflow: hidden;
+	}
+	
+	.content-nav {
+		width: 100%;
+		height: 320px;
+		overflow: auto;
+	}
+	
+	.tel {
+		display: none;
+		width: 132px;
+		z-index: 999;
+		padding-left: 28px;
+		height: 42px;
+		font-size: 14px;
+		line-height: 42px;
+		background: #43d06b;
+		color: #fff;
+		position: absolute;
+		right: -137px;
+		top: -15px;
+	}
+	
+	.detail-search-cons {
+		width: 319px;
+		height: 90px;
+		padding: 10px;
+		border: solid 1px #e1e7ed;
+		margin-bottom: 5px;
+		position: relative;
+	}
+	
+	.detail-search-cons .search-top {
+		width: 299px;
+		height: 16px;
+		line-height: 16px;
+	}
+	
+	.detail-search-cons .search-top span {
+		float: left;
+		font-size: 12px;
+		color: #2f3740;
+	}
+	
+	.search-middle {
+		width: 299px;
+		height: 12px;
+		margin-top: 15px;
+		line-height: 12px;
+	}
+	
+	.search-middle .search-mid-left {
+		height: 100%;
+		float: left;
+	}
+	
+	.search-middle .search-mid-left span {
+		float: left;
+		font-size: 12px;
+		color: #74899f;
+		margin-right: 9px;
+	}
+	
+	.search-middle .search-mid-right {
+		height: 100%;
+		float: right;
+	}
+	
+	.detail-search-cons .search-top b {
+		float: right;
+		font-size: 12px;
+		font-weight: normal;
+		color: #2f3740;
+	}
+	
+	.ssxq {
+		font-weight: normal;
+		float: left;
+		font-size: 12px;
+		color: #2f3740;
+	}
+	
+	.name {
+		float: left;
+		margin: 0;
+		padding: 0;
+		font-size: 16px;
+		margin-right: 20px;
+		color: #1789ff;
+	}
+	
+	.xqmj {
+		float: right;
+		font-weight: normal;
+		font-size: 12px;
+		color: #74899f;
+		margin-right: 9px;
+	}
+	
+	.frdb {
+		width: font-weight:normal;
+		float: right;
+		font-size: 12px;
+		color: #2f3740;
+	}
+	
+	.zdrylb {
+		font-weight: normal;
+		color: #2f3740;
+		;
+		float: left;
+	}
+	
+	.span_rylb {
+		color: #74899f;
+		float: left;
+		margin-right: 9px;
+	}
+	
+	.rylb.search-bottom {
+		width: 299px;
+		height: 12px;
+		line-height: 12px;
+		margin-top: 15px;
+	}
+	/*出租房屋*/
+	
+	#houseSearch input {
+		width: 248px;
+		height: 38px;
+		border-radius: 0 0 0 0;
+		border: solid 1px #e1e7ed;
+		float: left;
+	}
+	
+	#houseSearch button {
+		background: #1789ff;
+		width: 70px;
+		height: 38px;
+		border-radius: 0 0 0 0;
+		float: left;
+	}
+	
+	#houseSelect {
+		width: 319px;
+		height: 30px;
+		border: solid 1px #e1e7ed;
+		margin-top: 10px;
+		color: #1789ff;
+	}
+	
+	.consTwo {
+		width: 331px;
+		height: 300px;
+		margin-top: 10px;
+		overflow: auto;
+		cursor: pointer;
+	}
+	
+	.consTwo .detail-search-cons {
+		width: 319px;
+		height: 90px;
+		padding: 10px;
+		border: solid 1px #e1e7ed;
+		margin-bottom: 5px;
+	}
+	
+	.consTwo .detail-search-cons .search-top {
+		width: 299px;
+		height: 16px;
+		line-height: 16px;
+	}
+	
+	.consTwo .detail-search-cons .search-top h3 {
+		float: left;
+		margin: 0;
+		padding: 0;
+		font-size: 16px;
+		margin-right: 20px;
+		color: #1789ff;
+	}
+	
+	.consTwo .detail-search-cons .search-middle-one {
+		height: 12px;
+		margin-top: 15px;
+		line-height: 12px;
+	}
+	
+	.consTwo .detail-search-cons .search-middle-one .search-mid-left {
+		width: 170px;
+		height: 100%;
+		float: left;
+	}
+	
+	.consTwo .detail-search-cons .search-middle-one .search-mid-left span {
+		float: left;
+		font-size: 12px;
+		color: #74899f;
+		margin-right: 9px;
+	}
+	
+	.consTwo .detail-search-cons .search-middle-one .search-mid-left b {
+		font-weight: normal;
+		float: left;
+		font-size: 12px;
+		color: #2f3740;
+		;
+	}
+	
+	.consTwo .detail-search-cons .search-middle-one .search-mid-right {
+		height: 100%;
+		float: right;
+	}
+	
+	.consTwo .detail-search-cons .search-middle-one .search-mid-right span {
+		font-weight: normal;
+		float: right;
+		font-size: 12px;
+		color: #2f3740;
+		position: relative;
+	}
+	
+	.consTwo .detail-search-cons .search-middle-one .search-mid-right b {
+		float: right;
+		font-weight: normal;
+		font-size: 12px;
+		color: #74899f;
+		margin-right: 9px;
+	}
+	
+	.consTwo .detail-search-cons .search-middle {
+		height: 12px;
+		margin-top: 15px;
+		line-height: 12px;
+	}
+	
+	.consTwo .detail-search-cons .search-middle .search-mid-left {
+		width: 170px;
+		height: 100%;
+		float: left;
+	}
+	
+	.consTwo .detail-search-cons .search-middle .search-mid-left span {
+		float: left;
+		font-size: 12px;
+		color: #74899f;
+		margin-right: 9px;
+	}
+	
+	.consTwo .detail-search-cons .search-middle .search-mid-left b {
+		font-weight: normal;
+		float: left;
+		font-size: 12px;
+		color: #2f3740;
+	}
+	
+	.consTwo .detail-search-cons .search-middle .search-mid-right {
+		height: 100%;
+		float: right;
+	}
+	
+	.consTwo .detail-search-cons .search-middle .search-mid-right span {
+		width: font-weight:normal;
+		float: right;
+		font-size: 12px;
+		color: #2f3740;
+		position: relative;
+	}
+	
+	.consTwo .detail-search-cons .search-middle .search-mid-right span .pup-detail {
+		display: none;
+		width: 132px;
+		z-index: 999;
+		padding-left: 28px;
+		height: 42px;
+		font-size: 14px;
+		line-height: 42px;
+		background: #43d06b;
+		color: #fff;
+		position: absolute;
+		right: -137px;
+		top: -15px;
+	}
+	
+	.consTwo .detail-search-cons .search-middle .search-mid-right b {
+		float: right;
+		font-weight: normal;
+		font-size: 12px;
+		color: #74899f;
+		margin-right: 9px;
+	}
+	/*企业单位样式*/
+	
+	#citySearch input {
+		width: 248px;
+		height: 38px;
+		border-radius: 0 0 0 0;
+		border: solid 1px #e1e7ed;
+		float: left;
+	}
+	
+	#citySearch button {
+		background: #1789ff;
+		width: 70px;
+		height: 38px;
+		border-radius: 0 0 0 0;
+		float: left;
+	}
+	
+	#citySelect {
+		width: 319px;
+		height: 30px;
+		border: solid 1px #e1e7ed;
+		margin-top: 10px;
+		color: #1789ff;
+	}
+	
+	.consThree {
+		position: relative;
+	}
+	
+	.consThree .search-top h3 {
+		float: left;
+		margin: 0;
+		padding: 0;
+		font-size: 16px;
+		margin-right: 20px;
+		color: #1789ff;
+	}
+	
+	.consThree .search-top b {
+		float: right;
+		font-size: 12px;
+		font-weight: normal;
+		color: #2f3740;
+	}
+	
+	.consThree .search-bottom {
+		width: 299px;
+		height: 12px;
+		line-height: 12px;
+		margin-top: 15px;
+	}
+	
+	.consThree .search-bottom span {
+		color: #74899f;
+		float: left;
+		margin-right: 9px;
+	}
+	
+	.consThree .search-bottom b {
+		font-weight: normal;
+		color: #2f3740;
+		float: left;
+		width: 242px;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+	
+	.consThree .search-middle {
+		width: 299px;
+		height: 12px;
+		margin-top: 15px;
+		line-height: 12px;
+	}
+	
+	.consThree .search-middle .search-mid-left {
+		height: 100%;
+		float: left;
+	}
+	
+	.consThree .search-middle .search-mid-left span {
+		float: left;
+		font-size: 12px;
+		color: #74899f;
+		margin-right: 9px;
+	}
+	
+	.consThree .search-middle .search-mid-left b {
+		font-weight: normal;
+		float: left;
+		font-size: 12px;
+		color: #2f3740;
+	}
+	
+	.consThree .search-middle .search-mid-right {
+		height: 100%;
+		float: right;
+	}
+	
+	.consThree .search-middle .search-mid-right span {
+		font-weight: normal;
+		float: right;
+		font-size: 12px;
+		color: #2f3740;
+	}
+	
+	.consThree .search-middle .search-mid-right span .pup-detail {
+		display: none;
+		width: 132px;
+		padding-left: 28px;
+		height: 42px;
+		font-size: 14px;
+		line-height: 42px;
+		background: url(../images/search-bg.png);
+		color: #fff;
+		position: absolute;
+		right: -137px;
+		top: -15px;
+	}
+	
+	.consThree .search-middle .search-mid-right b {
+		float: right;
+		font-weight: normal;
+		font-size: 12px;
+		color: #74899f;
+		margin-right: 9px;
+	}
+	/*设施设备样式*/
+	
+	#baseSearch input {
+		width: 248px;
+		height: 38px;
+		border-radius: 0 0 0 0;
+		border: solid 1px #e1e7ed;
+		float: left;
+	}
+	
+	#baseSearch button {
+		background: #1789ff;
+		width: 70px;
+		height: 38px;
+		border-radius: 0 0 0 0;
+		float: left;
+	}
+	
+	#baseSelect {
+		width: 319px;
+		height: 30px;
+		border: solid 1px #e1e7ed;
+		margin-top: 10px;
+		color: #1789ff;
+	}
+	
+	.consFour {
+		position: relative;
+	}
+	
+	.consFour .search-top h3 {
+		float: left;
+		margin: 0;
+		padding: 0;
+		font-size: 16px;
+		margin-right: 20px;
+		color: #1789ff;
+	}
+	
+	.consFour .search-top b {
+		float: right;
+		font-size: 12px;
+		font-weight: normal;
+		color: #2f3740;
+	}
+	
+	.consFour .search-middles {
+		width: 299px;
+		height: 12px;
+		margin-top: 15px;
+		line-height: 12px;
+	}
+	
+	.consFour .search-middles .search-mids-left {
+		height: 100%;
+		float: left;
+	}
+	
+	.consFour .search-middles .search-mids-left span {
+		float: left;
+		font-size: 12px;
+		color: #74899f;
+		margin-right: 9px;
+	}
+	
+	.consFour .search-middles .search-mids-left b {
+		font-weight: normal;
+		float: left;
+		font-size: 12px;
+		color: #2f3740;
+	}
+	
+	.consFour .search-middles .search-mids-right {
+		height: 100%;
+		float: right;
+	}
+	
+	.consFour .search-middles .search-mids-right span {
+		font-weight: normal;
+		float: right;
+		font-size: 12px;
+		color: #2f3740;
+		position: relative;
+	}
+	
+	.consFour .search-middles .search-mids-right b {
+		float: right;
+		font-weight: normal;
+		font-size: 12px;
+		color: #74899f;
+		margin-right: 9px;
+	}
+	
+	.consFour .search-bottom {
+		width: 299px;
+		height: 12px;
+		margin-top: 15px;
+		line-height: 12px;
+	}
+	
+	.consFour .search-bottom .search-bot-left {
+		height: 100%;
+		float: left;
+	}
+	
+	.consFour .search-bottom .search-bot-left span {
+		float: left;
+		font-size: 12px;
+		color: #74899f;
+		margin-right: 9px;
+	}
+	
+	.consFour .search-bottom .search-bot-left b {
+		font-weight: normal;
+		float: left;
+		font-size: 12px;
+		color: #2f3740;
+	}
+	
+	.consFour .search-bottom .search-bot-right {
+		height: 100%;
+		float: right;
+	}
+	
+	.consFour .search-bottom .search-bot-right span {
+		font-weight: normal;
+		float: right;
+		font-size: 12px;
+		color: #2f3740;
+		position: relative;
+		width: 80px;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+	
+	.consFour .search-bottom .search-bot-right b {
+		float: right;
+		font-weight: normal;
+		font-size: 12px;
+		color: #74899f;
+		margin-right: 9px;
+	}
+	
+	.consFour .search-bottom .no-del {
+		font-weight: normal;
+		float: right;
+		font-size: 12px;
+		color: #2f3740;
+		width: 0;
+		position: relative;
+	}
+	
+	.consFour .search-bottom .search-bots-right span {
+		font-weight: normal;
+		float: right;
+		font-size: 12px;
+		padding-left: 10px;
+		color: #2f3740;
+	}
+	
+	.consFour .search-middles .search-mids1-right {
+		height: 100%;
+		float: right;
+	}
+	
+	.consFour .search-middles .search-mids1-right span {
+		font-weight: normal;
+		float: right;
+		font-size: 12px;
+		color: #2f3740;
+		position: relative;
+		width: 78px;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+	
+	.consFour .search-middles .search-mids1-right b {
+		float: right;
+		font-weight: normal;
+		font-size: 12px;
+		color: #74899f;
+		margin-right: 9px;
+	}
+	
+	.consFour .search-top b.sg-bg {
+		width: auto;
+		height: 18px;
+		background: #EB9E02;
+		padding: 0 3px;
+		border-top-left-radius: 10px;
+		border-bottom-left-radius: 10px;
+		color: #fff;
+		float: right;
+		font-weight: normal;
+	}
+	
+	.telbox {
+		width: 110px;
+		height: 34px;
+		line-height: 26px;
+		/*background: url(../images/tel-bg.png) no-repeat;*/
+		background-size: cover;
+		position: absolute;
+		right: 10px;
+		font-size: 14px;
+		letter-spacing: 1px;
+		top: 33px;
+		color: #fff;
+		text-align: center;
+		display: none;
+	}
+	
+	.telbox1 {
+		width: 110px;
+		height: 34px;
+		line-height: 26px;
+		/*background: url(../images/tel-bg.png) no-repeat;*/
+		background-size: cover;
+		position: absolute;
+		right: 10px;
+		font-size: 14px;
+		letter-spacing: 1px;
+		top: 8px;
+		color: #fff;
+		text-align: center;
+		display: none;
+	}
+	/*按钮*/
+	
+	.demobox {
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: calc(100% - 140px);
+		/*overflow: hidden;*/
+		z-index: 450;
+	}
+	
+	.demo2 {
+		position: absolute;
+		left: 20px;
+		top: 60px;
+		height: calc(100% - 140px);
+		/*overflow: hidden;*/
+		z-index: 450;
+	}
+	
+	.areas-content {
+		width: calc(100% - 8px);
+		height:100%;
+		overflow: auto;
+	}
+	
+	#shrinkBtn {
+		width: 17px;
+		height: 61px;
+		background: url(../images/shrink.png) 0 -61px;
+		background-size: cover;
+		position: absolute;
+		right: -17px;
+		top: 45%;
+		cursor: pointer;
+	}
+	
+	#unfoldBtn {
+		width: 30px;
+		height: 30px;
+		position: absolute;
+		left: 21px;
+		top: 61px;
+		z-index: 450;
+		background: url(../images/展开.png) red;
+		background-size: cover;
+		cursor: pointer;
+	}
+	
+	.nons {
+		display: none;
+	}
+	
+	.shows {
+		display: block;
+	}
+	
+	.search-contents {
+		width: 331px;
+		height: calc(100% - 163px);
+		margin-top: 10px;
+		overflow: auto;
+		cursor: pointer;
+	}
+	/*巡防警录*/
+	.alarmCons{
+		height: 150px;
+	}
+	.alarmCons .search-middles b{
+		width: 263px;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+	/*走访情况*/
+	.interviewCons .search-middles b{
+		width: 227px;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+	/*警民悬谈*/
+	.talkCons .search-middles b{
+		width: 239px;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+	.talkCons .search-bottom .search-bot-right span{
+		width: auto;
+	}
+	/*巡逻防范*/
+	.conditionCons .search-middles b{
+		width: 212px;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+	.conditionCons b{
+		font-weight: normal;
+		color: #74899f;
+	}
+/*左侧列表修改样式*/
+/*企业单位修改*/
+.detail-search-cons{
+	border:0;
+	margin-bottom:0;
+	border-bottom:1px solid #d3dce6;
+}
+.detail-search-cons:nth-child(1){
+	border-top:1px solid #d3dce6;
+}
+.consThree .search-top b{
+	background-color: #43d06b;
+	border-radius: 2px;
+	color:#FFFFFF;
+	padding:0px 9px 1px 9px;
+}
+#companyDLSelect{
+	width: 121px;
+}
+#companySelect{
+	width: 121px;
+}
+.showBtn{
+	width: 70px;
+	height: 30px;
+	background-color: #f0f4f8;
+	border-radius: 3px;
+	border: solid 1px #d3dce6;
+}

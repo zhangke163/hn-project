@@ -1,0 +1,78 @@
+{
+    "success": true, 
+    "total": 6, 
+    "data": [
+        {
+            "LONGIT": "120.653921", 
+            "LAT": "30.411435", 
+            "VEHICLE_CODE": "浙FCY865", 
+            "SPEED": "61", 
+            "REPORT_TIME": "2018-07-16 14:20:12", 
+            "DERIVE_POS": "81", 
+            "MILE_COUNT": "10139716", 
+            "SATL_COUNT": 9, 
+            "SERVER_TIME": "2018-07-16 14:20:17", 
+            "LOC_DESC": null
+        }, 
+        {
+            "LONGIT": "120.640327", 
+            "LAT": "30.42491", 
+            "VEHICLE_CODE": "电动312918", 
+            "SPEED": "0", 
+            "REPORT_TIME": "2018-07-16 14:19:28", 
+            "DERIVE_POS": "304", 
+            "MILE_COUNT": "2941714", 
+            "SATL_COUNT": 9, 
+            "SERVER_TIME": "2018-07-16 14:19:32", 
+            "LOC_DESC": null
+        }, 
+        {
+            "LONGIT": "120.64021", 
+            "LAT": "30.424919", 
+            "VEHICLE_CODE": "电动312922", 
+            "SPEED": "0", 
+            "REPORT_TIME": "2018-07-16 14:19:56", 
+            "DERIVE_POS": "159", 
+            "MILE_COUNT": "216708", 
+            "SATL_COUNT": 9, 
+            "SERVER_TIME": "2018-07-16 14:20:00", 
+            "LOC_DESC": null
+        }, 
+        {
+            "LONGIT": "120.663378", 
+            "LAT": "30.423849", 
+            "VEHICLE_CODE": "电动313603", 
+            "SPEED": "0", 
+            "REPORT_TIME": "2018-07-16 14:19:55", 
+            "DERIVE_POS": "360", 
+            "MILE_COUNT": "487710", 
+            "SATL_COUNT": 0, 
+            "SERVER_TIME": "2018-07-16 14:20:00", 
+            "LOC_DESC": null
+        }, 
+        {
+            "LONGIT": "120.637844", 
+            "LAT": "30.420226", 
+            "VEHICLE_CODE": "电动312921", 
+            "SPEED": "0", 
+            "REPORT_TIME": "2018-07-16 14:19:21", 
+            "DERIVE_POS": "10", 
+            "MILE_COUNT": "303397", 
+            "SATL_COUNT": 9, 
+            "SERVER_TIME": "2018-07-16 14:19:26", 
+            "LOC_DESC": null
+        }, 
+        {
+            "LONGIT": "120.644692", 
+            "LAT": "30.42187", 
+            "VEHICLE_CODE": "电动36748", 
+            "SPEED": "0", 
+            "REPORT_TIME": "2018-07-16 14:18:55", 
+            "DERIVE_POS": "0", 
+            "MILE_COUNT": "822550", 
+            "SATL_COUNT": 0, 
+            "SERVER_TIME": "2018-07-16 14:18:58", 
+            "LOC_DESC": null
+        }
+    ]
+}

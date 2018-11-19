@@ -1,0 +1,89 @@
+.numbox {
+	position: absolute;
+	right: 20px;
+	bottom: 70px;
+	width: 260px;
+	height: 200px;
+	background: #FFFFFF center 50px no-repeat;
+	/*background: url(../images/lines.png) #FFFFFF center 50px no-repeat;*/
+}
+
+.numtitle-box {
+	width: 260px;
+	height: 40px;
+	background-color: #1789ff;
+}
+
+.numtitle-box h2 {
+	float: left;
+	font-family: FZHZGBJW--GB1-0;
+	font-size: 14px;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 24px;
+	padding: 7px 0 0 10px;
+	color: #ffffff;
+}
+
+.numtitle-box .titcons {
+	float: right;
+	width: 60px;
+	height: 26px;
+	color: #ffffff;
+	line-height: 26px;
+	font-family: MicrosoftYaHei;
+	font-size: 16px;
+	text-align: center;
+	background-color: #43d06b;
+	border-radius: 13px;
+	margin-top: 7px;
+	margin-right: 10px;
+}
+
+.numconts-box {
+	width: 130px;
+	height: 80px;
+	float: left;
+}
+
+.numconts-box p {
+	margin: 0;
+	padding;
+	0;
+	font-family: MicrosoftYaHei;
+	font-size: 10px;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #3a3a3a;
+	margin-top: 13px;
+	padding-left: 15px;
+}
+
+.numconts-box .imgcons {
+	width: 100px;
+	height: 40px;
+	margin-left: 15px;
+}
+
+.numconts-box .imgcons img {
+	display: block;
+	float: left;
+	margin-top: 3px;
+}
+
+.numconts-box .imgcons h1 {
+	font-family: MicrosoftYaHei;
+	font-size: 28px;
+	font-weight: bold;
+	font-stretch: normal;
+	letter-spacing: 1px;
+	color: #1789ff;
+	margin-top: 4px;
+	margin-bottom: 6px;
+	float: right;
+}
+
+.numconts-box:nth-of-type(2) .imgcons img {
+	margin-left: -3px;
+}

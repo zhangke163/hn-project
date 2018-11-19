@@ -1,0 +1,96 @@
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="../assets/plugins/leaflet/leaflet.css">
+		<link rel="stylesheet" href="../assets/plugins/leaflet/L.Control.MousePosition.css">
+		<link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.css">
+		<link rel="stylesheet" href="../assets/plugins/layui/css/layui.css">
+		<link rel="stylesheet" href="../assets/css/base.css">
+		<link rel="stylesheet" href="../assets/css/searchPanel.css">
+		<link rel="stylesheet" href="../assets/css/map-popup.css">
+		<link rel="stylesheet" href="../assets/css/left-list.css" />
+		<link rel="stylesheet" href="../assets/css/right-list.css" />
+		<link rel="stylesheet" href="../assets/css/popup.css" />
+		<style type="text/css">
+			.leaflet-bottom.leaflet-right {
+				background: transparent;
+			}
+			
+			html,
+			body,
+			#map_container {
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="map_container"></div>
+
+		<script src="../assets/plugins/jquery/jquery.min.js"></script>
+		<script src="../assets/plugins/jquery/jquery.form.js"></script>
+		<script src="../assets/plugins/layui/layui.all.js" charset="utf-8"></script>
+		<script src="../assets/plugins/leaflet/leaflet.js"></script>
+
+		<script src="../assets/plugins/leaflet/LoadArcgisTile.js"></script>
+		<script src="../assets/script/util.js"></script>
+		<script src="../assets/script/paichusuo.js"></script>
+		<script src="../assets/script/customUtil.js"></script>
+		<script src="../assets/script/global-variable.js" type="text/javascript"></script>
+		<script src="../assets/plugins/leaflet/L.Control.MousePosition.js"></script>
+
+		<script>
+			$(function() {
+				var currentLocation = null;
+				var map = null;
+				var markerLayer = L.layerGroup([]);
+				var gdTile = L.tileLayer.gdLayer({});
+
+				annotion = new L.FeatureGroup();
+				map = L.map('map_container', {
+					zoomControl: false,
+					attributionControl: false,
+					doubleClickZoom: false,
+					boxZoom: true,
+					dragging: true,
+					minZoom: 8,
+					layers: [markerLayer, gdTile, annotion]
+				}).setView([30.398517669, 120.713582], 11);
+				L.control.mousePosition({
+					'position': 'bottomright'
+				}).addTo(map);
+
+				pianquLayer = L.geoJSON(polices, {
+					style: function(feature) {
+						return {
+							color: 'blue',
+							fillOpacity: 0.1,
+							weight: 1
+						};
+					}
+				}).addTo(map);
+				//获取目标坐标
+				var lat = getQueryString("lat");
+				var lng = getQueryString("lng");
+				if(lat && lng) {
+					L.marker([lat,lng]).addTo(map);
+					map.panTo([lat,lng]);
+					map.setZoom(14);
+				}
+					
+				function getQueryString(name) {
+					var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+					var r = window.location.search.substr(1).match(reg);
+					if(r != null) {
+						return unescape(r[2]);
+					}
+					return null;
+				}
+			})
+		</script>
+
+	</body>
+
+</html>
